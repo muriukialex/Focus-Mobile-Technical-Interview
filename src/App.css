@@ -1,38 +1,479 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Catamaran", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+body::-webkit-scrollbar {
+  width: 16px; /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: rgb(16, 16, 16); /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #eee; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 2px solid #000; /* creates padding around scroll thumb */
+}
+
+.top-nav {
+  background: #000;
+  color: rgb(202, 195, 195);
+  text-align: center;
+  position: relative;
+  top: 0px;
+  width: 100%;
+  font-size: 2em;
+}
+/*make font-size in top nav bar small on sreens below 500px*/
+@media screen and (max-width: 500px) {
+  .top-nav {
+    font-size: 1.3em;
+  }
+}
+
+nav {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin-left: 1rem;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 360px) {
+  nav {
+    grid-template-columns: 1fr;
+  }
+}
+
+nav > div > a {
+  color: rgb(28, 28, 28);
+  text-decoration: none;
+}
+nav > div > a:hover {
+  border: 1px dotted #000;
+}
+nav > div > a:visited {
+  color: rgb(28, 28, 28);
+}
+
+/*this is the styling for the body section othe page*/
+.container {
+  min-height: calc(100vh - 2rem - 3rem);
+}
+/*styling in home and about section to make items appear in the center of the page*/
+.homeSection {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.aboutSection {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+/*form section
+make form to be in far right
+*/
+.formField {
+  float: right;
+}
+/*add some styling to the label in form Field*/
+.formField > label {
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-right: 0.1rem;
+  cursor: pointer;
+}
+/*make the input field a bit larger*/
+.formField > input {
+  font-size: 1.02rem;
+  padding: 0.06em;
+}
+
+/*not found image page*/
+.notFoundPage {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.notFoundPage > img {
+  width: 50%;
+  height: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.productsContainer {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 624px) {
+  .productsContainer {
+    grid-template-columns: 1fr;
+  }
+  .formField {
+    float: none;
+  }
+  .formField > input {
+    font-size: 1rem;
+    padding: 0.06em;
+    width: 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*resizing the product image*/
+.productImage {
+  height: 50%;
+  width: 66% !important;
+}
+
+@media screen and (max-width: 360px) {
+  .product-details-image {
+    height: 25% !important;
+    width: 25% !important;
+  }
+  .productImage {
+    height: 25%;
+    width: 50% !important;
+  }
+}
+
+.largeDetailsContainer {
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+}
+/*details container styling*/
+.detailsContainer {
+  border: 1px solid #eee;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+/*styling for the price section in the details page*/
+.itemPriceDetails {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/*responsive when device width is below 780px*/
+@media screen and (max-width: 780px) {
+  .itemPriceDetails {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/*shopping icon*/
+.fas {
+  cursor: pointer;
+}
+
+.cartContainer {
+  margin: 0 auto;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+.cartSection {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.priceInformation {
+  margin: 0 auto;
+}
+@media screen and (max-width: 400px) {
+  .priceInformation {
+    text-align: center;
+    display: grid;
+  }
+}
+/*style for the remove from cart icon*/
+.fa-trash-alt {
+  cursor: pointer;
+}
+
+/*styles for the price section in the cart page section*/
+.cartPageSectionPrice {
+  background-color: #3494e9;
+  border: none;
+  color: #fff;
+  float: right;
+  padding: 1rem;
+}
+.totalCartSection {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+@media screen and (max-width: 400px) {
+  .cartPageSectionPrice {
+    float: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0.5rem;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+.footer-distributed {
+  background: #666;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 55px 50px;
 }
 
-@keyframes App-logo-spin {
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+  width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3 {
+  color: #ffffff;
+  font: normal 36px "Open Sans", cursive;
+  margin: 0;
+}
+
+.footer-distributed h3 span {
+  color: lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links {
+  color: #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  font-weight: 400;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+  color: #222;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center {
+  width: 35%;
+}
+
+.footer-distributed .footer-center i {
+  background-color: #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p {
+  display: inline-block;
+  color: #ffffff;
+  font-weight: 400;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+  color: lightseagreen;
+  text-decoration: none;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight: 300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+  width: 20%;
+}
+
+.footer-distributed .footer-company-about {
+  line-height: 20px;
+  color: #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed > .footer-left,
+  .footer-distributed > .footer-center,
+  .footer-distributed > .footer-right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    /* text-align: center; */
+  }
+
+  .footer-distributed .footer-center i {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 650px) {
+  .footer-distributed > .footer-left,
+  .footer-distributed > .footer-center,
+  .footer-distributed > .footer-right {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    /* text-align: center; */
+  }
+}
+
+/*snack bar styling*/
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
   from {
-    transform: rotate(0deg);
+    bottom: 0;
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
   }
 }
