@@ -56,5 +56,4 @@ Your app is ready to be deployed!
 
 ## Which part of the assignment did you enjoy the least?
 
-- I generally enjoyed putting together the whole application but hey, there were moments where stuff
-  did not add up, that sucked.
+- I generally enjoyed the whole process, from when I laid my hands on that 💻...🤣
