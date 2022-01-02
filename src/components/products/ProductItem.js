@@ -1,26 +1,26 @@
-import React, { Fragment } from "react";
-import LazyLoad from "react-lazyload";
+import React, { Fragment } from "react"
+import LazyLoad from "react-lazyload"
 
-import PropTypes from "prop-types";
-import "../../App.css";
-import { Link } from "react-router-dom";
+import PropTypes from "prop-types"
+import "../../App.css"
+import { Link } from "react-router-dom"
 
-import Spinner from "../layout/Spinner";
+import Spinner from "../layout/Spinner"
 
-import ProductsContext from "../../context/products/productsContext";
+import ProductsContext from "../../context/products/productsContext"
 
 const ProductItem = ({
   product: { id, name, description, image_url, available_quantity, prices },
 }) => {
-  const productsContext = React.useContext(ProductsContext);
+  const productsContext = React.useContext(ProductsContext)
 
   const myFunction = () => {
-    var x = document.getElementById("snackbar");
-    x.className = "show";
+    var x = document.getElementById("snackbar")
+    x.className = "show"
     setTimeout(function () {
-      x.className = x.className.replace("show", "");
-    }, 3000);
-  };
+      x.className = x.className.replace("show", "")
+    }, 3000)
+  }
 
   let product = {
     id: id,
@@ -29,19 +29,20 @@ const ProductItem = ({
     image_url: image_url,
     available_quantity: available_quantity,
     prices: prices,
-  };
+  }
   //we use our add to cart function here
   const handleAdd = () => {
     // generate a random number here ****************************
-    const randomNumber = Math.floor(Math.random() * 100 + 1);
+    const randomNumber = Math.floor(Math.random() * 100 + 1)
 
     //pass in the object clicked into the addToCart function
-    productsContext.addToCart(product, randomNumber);
-    myFunction();
-  };
+    productsContext.addToCart(product, randomNumber)
+    console.log(product)
+    myFunction()
+  }
 
   //currency to display --> KES
-  const price = prices[1].price;
+  const price = prices[1].price
 
   return (
     <div
@@ -74,10 +75,10 @@ const ProductItem = ({
       )}
       <div id="snackbar">Item has been added to cart</div>
     </div>
-  );
-};
+  )
+}
 
 ProductItem.propTypes = {
   product: PropTypes.object.isRequired,
-};
-export default ProductItem;
+}
+export default ProductItem
