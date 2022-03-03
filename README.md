@@ -3,12 +3,9 @@
 ## steps to get initial setup of this repository
  - `git clone https://github.com/muriukialex/Focus-Mobile-Technical-Interview.git`
  - `cd Focus-Mobile-Technical-Interview`
+ -  `npm install or npm i`
+ -  `npm start` (Runs the app locally)
 
-## npm install or npm i
-
-## npm start
-
-Runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
 
 The page will reload if you make edits.
@@ -62,4 +59,4 @@ Your app is ready to be deployed!
 
 ## Which part of the assignment did you enjoy the least?
 
-- I generally enjoyed the whole process, from when I laid my hands on that 💻...🤣
+- I generally enjoyed the whole process, from when I laid my hands on that 💻.
