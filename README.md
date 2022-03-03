@@ -1,8 +1,8 @@
 ## In the project directory, you can run:
 
 ## steps to get initial setup of this repository
- - run git clone https://github.com/muriukialex/Focus-Mobile-Technical-Interview.git
- - cd Focus-Mobile-Technical-Interview
+ - `git clone https://github.com/muriukialex/Focus-Mobile-Technical-Interview.git`
+ - `cd Focus-Mobile-Technical-Interview`
 
 ## npm install or npm i
 
